@@ -34,4 +34,17 @@ checkBtn.addEventListener("click", () => {
   }
 });
 
-// const Pattern = /^(?:1\s?)?(?:\((\d{3})\)[\s-]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/
+document.forms[0].addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!userInput.value) {
+    alert("Please provide a phone number");
+  } else {
+    validatePhoneNumber();
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  if (result.innerHTML) {
+    result.innerHTML = "";
+  }
+});
