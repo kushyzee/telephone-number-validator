@@ -3,12 +3,16 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const result = document.getElementById("results-div");
 
+// regex for numbers like 1 (555) 555-5555 and (555)555-5555
 const matchWithBracket = /^(?:1\s?)?(?:\((\d{3})\)\s?)(\d{3})-(\d{4})$/;
-const matchWithHyphen = /^(?:1\s)?(?:(\d{3})-)(\d{3})-(\d{4})$/;
+// regex for numbers like 1 555-555-5555 and 555-555-5555
+const matchOnlyHyphen = /^(?:1\s)?(?:(\d{3})-)(\d{3})-(\d{4})$/;
+// regex for numbers like 1 555 555 5555 and 5555555555
 const matchOnlyNumber = /^(?:1\s)?(?:(\d{3})\s?)(\d{3})\s?(\d{4})$/;
-const validList = [matchWithBracket, matchWithHyphen, matchOnlyNumber];
+const validList = [matchWithBracket, matchOnlyHyphen, matchOnlyNumber];
 
 const isValid = (num) => validList.some((regex) => regex.test(num));
+
 const validatePhoneNumber = () => {
   const value = userInput.value;
   let validNumber = isValid(value);
