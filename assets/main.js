@@ -3,26 +3,16 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const result = document.getElementById("results-div");
 
-const denyList = []
+const matchWithBracket = /^(?:1\s?)?(?:\((\d{3})\)\s?)(\d{3})-(\d{4})$/
+const matchWithHyphen = /^(?:1\s)?(?:(\d{3})-)(\d{3})-(\d{4})$/
+const matchOnlyNumber = /^(?:1\s)?(?:(\d{3})\s?)(\d{3})\s?(\d{4})$/
+const validList = [matchWithBracket, matchWithHyphen, matchOnlyNumber]
 
-const checkCountryCode = value => {
-  value = value.replace(/[^0-9]/g, "");
-  if (value.length === 11) {
-    return value[0] == 1 ? true : false
-  } else if (value.length === 10) {
-    return true
-  } else {
-    return false
-  }
-}
+const isValid = num => validList.some(regex => regex.test(num))
 const validatePhoneNumber = () => {
   const value = userInput.value
-  if (!checkCountryCode(value)) {
-    console.log(`invalid Us number: ${value}`)
-    return;
-  }
-
-  console.log(value);
+  let result = isValid(value)
+  console.log(`${result} Us number: value`);
   userInput.value = ''
 }
 
@@ -34,3 +24,5 @@ checkBtn.addEventListener('click', ()=>{
     validatePhoneNumber()
   }
 })
+
+  // const Pattern = /^(?:1\s?)?(?:\((\d{3})\)[\s-]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/
