@@ -17,11 +17,11 @@ const validatePhoneNumber = () => {
   if (validNumber) {
     para.className = "valid";
     para.innerHTML = `Valid US number: <span>${value}</span>`;
-    result.appendChild(para);
+    result.prepend(para);
   } else {
     para.className = "invalid";
     para.innerHTML = `Invalid US number: <span>${value}</span>`;
-    result.appendChild(para);
+    result.prepend(para);
   }
   userInput.value = "";
 };
