@@ -7,10 +7,12 @@ const denyList = []
 
 const checkCountryCode = value => {
   value = value.replace(/[^0-9]/g, "");
-  if (value.length !== 11 || value[0] != 1) {
-    return false
-  } else {
+  if (value.length === 11) {
+    return value[0] == 1 ? true : false
+  } else if (value.length === 10) {
     return true
+  } else {
+    return false
   }
 }
 const validatePhoneNumber = () => {
