@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/main.js" defer></script>
-  <title>Telephone Number Validator</title>
-</head>
-<body>
-  <h1>Telephone Number Validator</h1>
-  <div class="container">
-    <div class="main-card">
-      <form aria-label="Phone Number Validation">
-        <label for="user-input">Enter a Phone Number</label>
-        <input type="tel" name="number" id="user-input" autocomplete="off">
-      </form>
-      <div class="result">
-        <p class="invalid">Invalid Us number: <span>08138589274</span></p>
-        <p class="valid">valid Us number: <span>5551235555</span></p>
-        <p class="valid">valid Us number: <span>1 555-555-5555</span></p>
-        <p class="valid">valid Us number: <span>1 (555) 555-5555</span></p>
-        <p class="valid">valid Us number: <span>1(555)555-5555</span></p>
-        <p class="valid">valid Us number: <span>1 555 555 5555</span></p>
-        <p class="valid">valid Us number: <span>555-555-5555</span></p>
-        <p class="valid">valid Us number: <span>(555)555-5555</span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/main.js" defer></script>
+    <title>Telephone Number Validator</title>
+  </head>
+  <body>
+    <h1>Telephone Number Validator</h1>
+    <div class="container">
+      <div class="main-card">
+        <form aria-label="Phone Number Validation">
+          <label for="user-input">Enter a Phone Number</label>
+          <input type="tel" name="number" id="user-input" autocomplete="off" />
+        </form>
+        <div id="results-div" class="result">
+          <p class="invalid">Invalid Us number: <span>08138589274</span></p>
+          <p class="valid">valid Us number: <span>5551235555</span></p>
+          <p class="valid">valid Us number: <span>1 555-555-5555</span></p>
+          <p class="valid">valid Us number: <span>1 (555) 555-5555</span></p>
+          <p class="valid">valid Us number: <span>1(555)555-5555</span></p>
+          <p class="valid">valid Us number: <span>1 555 555 5555</span></p>
+          <p class="valid">valid Us number: <span>555-555-5555</span></p>
+          <p class="valid">valid Us number: <span>(555)555-5555</span></p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="check-btn" type="button">Check</button>
+        <button id="clear-btn" type="button">Clear</button>
       </div>
     </div>
-    <div class="buttons">
-      <button id="check-btn" type="button">Check</button>
-      <button id="clear-btn" type="button">Clear</button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
